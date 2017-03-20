@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html id="CPMS" lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="css/bootstrap.css" media="screen">
+      <link rel="stylesheet" href="css/custom.min.css">
+      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+      <script src="apps/app.js" type="text/javascript"></script>
+      <script src="scripts/simplePagination.js" type="text/javascript"></script>
+      <script src="controllers/decimasearch.js" type="text/javascript"></script>
+	  
+      <style>
+         #viewReport, #ClearControls, #SearchControls, #Print, #Print2, #exportButton, #okbutton, #hidebutton, #popupLineList, #clearbuttonSlider, #loadSliderbutton, #clearHeatMap, #toggleHeatMapLegend {
+         background: #00B9E2;
+         border: 1px solid #CCC;
+         color: white;
+         /*box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);*/
+         cursor: pointer;
+         display: inline-block;
+         max-width: 100px;
+         padding: 3px;
+         text-align: center;
+         vertical-align: middle;
+         }
+         #viewReport:active, #ClearControls:active, #SearchControls:active, #Print:active, #Print2:active, #exportButton:active, #okbutton:active, #hidebutton:active, #popupLineList:active, #clearbuttonSlider:active, #loadSliderbutton:active, #clearHeatMap:active, #toggleHeatMapLegend:active {
+         box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.6);
+         color: lightblue;
+         }
+
+
+		 .logincenter {
+        width: 400px;
+        height: 600px;
+
+        position:absolute; /*it can be fixed too*/
+        left:0; right:0;
+        top:0; bottom:0;
+        margin:auto;
+
+        /*this to solve "the content will not be cut when the window is smaller than the content": */
+        max-width:100%;
+        max-height:100%;
+        overflow:auto;
+    }
+		 
+      </style>
+	  <style type="text/css" media="screen">
+    
+    .slide-out-div {
+       padding: 20px;
+        width: 250px;
+        background: #f2f2f2;
+        border: #29216d 2px solid;
+    }
+
+
+	</style>
+
+      <title>CPMS</title>
+   </head>
+   <body :ng="http://angularjs.org" id="ng-app">
+      
+      <div class="container">
+         <div class="logincenter" >
+			
+			  <form class="form-signin" action="index.html" style="width: 400px">
+				<h2><img src="https://trilliumhealthpartners.ca/images/logo.png"  /></h2>
+				<h2 class="form-signin-heading">Cardiac Patient Management System </h2>
+				<label for="inputEmail" class="sr-only">Email address</label>
+				<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+				<label for="inputPassword" class="sr-only">Password</label>
+				<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+				<div class="checkbox">
+				  <label>
+					<input type="checkbox" value="remember-me"> Remember me
+				  </label>
+				</div>
+				<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+			  </form>
+
+			</div> <!-- /container -->
+
+
+			<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+			<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+      </div>
+      <!-- Bootstrap core JavaScript
+         ================================================== -->
+      <!-- Placed at the end of the document so the pages load faster -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	  <script src="scripts/jquery.tabSlideOut.v2.0.js" type="text/javascript"></script>
+      <script>
+         (function () {
+         
+             angular.module('CPMS');
+         
+             angular.element(document).ready(function () {
+                 angular.bootstrap(document, ['CPMS']);
+             });
+         
+         })();
+         
+         
+      </script>
+	  
+
+		
+
+		<script>
+			$('.slide-out-div').tabSlideOut({
+                tabHandle: '.handle',                         //class of the element that will be your tab -doesnt have to be an anchor
+                pathToTabImage: 'images/map.png',     //relative path to the image for the tab *required*
+                imageHeight: '127px',                         //height of tab image *required*
+                imageWidth: '55px',                           //width of tab image *required*    
+				tabLocation: 'left',                               //side of screen where tab lives, top, right, bottom, or left
+                 speed: 300,                                        //speed of animation
+                 action: 'click',                                   //options: 'click' or 'hover', action to trigger animation
+                 topPos: '20px',                                   //position from the top
+                 fixedPosition: false                               //options: true makes it stick(fixed position) on scroll
+				});
+		</script>
+
+   </body>
+</html>
+
+
